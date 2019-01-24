@@ -5,6 +5,14 @@ resource "aws_instance" "example" {
   depends_on = ["aws_s3_bucket.example"]
   }
 resource "aws_s3_bucket" "example" {
-bucket = "terraform-demo000"
+  bucket = "terraform-demo000"
   acl    = "private"
   }
+resource "aws_vpc" "vpc" {
+  cidr_block = "${var.cidr_vpc}"
+  enable_dns_support   = true
+  enable_dns_hostnames = true
+tags = {
+ Name = "vpc-demo"
+ }
+}
