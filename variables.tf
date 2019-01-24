@@ -12,3 +12,8 @@ variable "aws_secret_key" {
 variable "aws_region" {
   default = "us-west-2"
 }
+
+variable "cidr_vpc" {
+  description = "CIDR block for VPC"
+  default     = "172.16.0.0/16" 
+  }
